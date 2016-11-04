@@ -22,11 +22,10 @@ public class StartedService extends Service {
                 try {
                     wait(20000);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();                                                                                                                                                                                                                                                                                    Trace();
                 }
             }
             stopSelf(serviceId);
-
         }
     }
 
@@ -35,10 +34,11 @@ public class StartedService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Toast.makeText(StartedService.this, "Service is started", Toast.LENGTH_SHORT).show();
-        /*Thread myThread = new Thread(new MyThread(startId));
-        myThread.start();*/
+        Thread myThread = new Thread(new MyThread(startId));
+        myThread.start();
         return START_STICKY;
     }
+
 
     @Override
     public IBinder onBind(Intent intent) {
