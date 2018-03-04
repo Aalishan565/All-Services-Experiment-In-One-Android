@@ -17,7 +17,10 @@
         </activity>
 
         <service
-            android:name=".StartedService"
+            android:name=".StartService"
+            android:exported="false" />
+        <service
+            android:name=".BindService"
             android:exported="false" />
         <service
             android:name=".IntentServiceClass"
@@ -25,7 +28,7 @@
 
         <activity android:name=".StartedServiceActivity" />
         <activity android:name=".IntentServiceActivity" />
-        <activity android:name=".BoundedServiceActivity"></activity>
+        <activity android:name=".BindServiceActivity"></activity>
     </application>
 
 </manifest>
