@@ -43,16 +43,14 @@ public class StartService extends Service {
         }
     }
 
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         ctx = getApplicationContext();
-        Toast.makeText(StartService.this, "Service is started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Service is started", Toast.LENGTH_SHORT).show();
         Thread myThread = new Thread(new MyThread(startId));
         myThread.start();
         return START_NOT_STICKY;
     }
-
 
     @Override
     public IBinder onBind(Intent intent) {

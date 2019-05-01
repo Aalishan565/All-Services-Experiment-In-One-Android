@@ -1,5 +1,7 @@
 package com.servicesexperimentpoc;
 
+import android.app.IntentService;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +18,10 @@ public class IntentServiceActivity extends AppCompatActivity {
         mBtnStartIntentService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent startedIntent = new Intent(IntentServiceActivity.this, IntentServiceClass.class);
+                for (int i=0;i<10;i++){
+                    startService(startedIntent);
+                }
 
             }
         });

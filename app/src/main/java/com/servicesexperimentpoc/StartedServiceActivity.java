@@ -54,7 +54,6 @@ public class StartedServiceActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.btn_stop_service:
                 Intent stopIntent = new Intent(this, StartService.class);
-
                 stopService(stopIntent);
                 break;
         }
